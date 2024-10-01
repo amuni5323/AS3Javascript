@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add and Display Items in Array</title>
+    <style>
+        body { background-color: rgb(241, 239, 239);
+            font-family: Arial, sans-serif;
+        }
+        #container{
+            background-color: white;
+            margin: 20px 10px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+        }
+        input {
+            padding: 5px;
+            margin-right: 10px;
+            width: 300px;
+        }
+        button { font-size: 20px;
+            padding: 5px 10px;
+        }
+        .result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <input type="number" id="inputValue" placeholder="Enter value">
+        <button onclick="addItem()">Add</button>
+        <button onclick="displayItems()">Display</button>
+    
+        <hr>
+    
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+    
+        let items = [];
+
+        // Function to add items to the array
+        function addItem() {
+            const input = document.getElementById('inputValue').value;
+            if (input) {
+                items.push(parseInt(input)); 
+                document.getElementById('inputValue').value = '';
+            }
+        }
+
+        
+        function displayItems() {
+            let resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = ''; // Clear previous results
+            items.forEach((item, index) => {
+                resultDiv.innerHTML += `<p>Element ${index + 1} = ${item}</p>`;
+            });
+        }
+    </script>
+
+</body>
+</html>

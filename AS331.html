@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input {
+            margin: 10px 0;
+            padding: 8px;
+            width: 200px;
+        }
+        button {
+            padding: 8px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Check If Either Number is Between 50 and 99</h2>
+
+    <label for="num1">Enter first number:</label><br>
+    <input type="number" id="num1" placeholder="Enter first number"><br>
+
+    <label for="num2">Enter second number:</label><br>
+    <input type="number" id="num2" placeholder="Enter second number"><br>
+
+    <button onclick="checkRange()">Check Range</button>
+
+    <div class="result" id="result"></div>
+
+    <script>
+        function checkRange() {
+            var num1 = parseInt(document.getElementById('num1').value);
+            var num2 = parseInt(document.getElementById('num2').value);
+             if ((num1 >= 50 && num1 <= 99) || (num2 >= 50 && num2 <= 99)) {
+                document.getElementById('result').innerText = "True: One or both numbers are in the range 50 to 99.";
+            } 
+            else {
+                document.getElementById('result').innerText = "False: Neither number is in the range 50 to 99.";
+            }
+        }
+    </script>
+
+</body>
+</html>

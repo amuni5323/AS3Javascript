@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closest Value to 100</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input {
+            margin: 10px 0;
+            padding: 8px;
+            width: 200px;
+        }
+        button {
+            padding: 8px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Find Closest Value to 100</h2>
+
+    <label for="num1">Enter first number:</label><br>
+    <input type="number" id="num1" placeholder="Enter first number"><br>
+
+    <label for="num2">Enter second number:</label><br>
+    <input type="number" id="num2" placeholder="Enter second number"><br>
+
+    <button onclick="findClosestValue()">Find Closest</button>
+
+    <script>
+        function findClosestValue() {
+            // Get the values from the input fields
+            var num1 = parseInt(document.getElementById('num1').value);
+            var num2 = parseInt(document.getElementById('num2').value);
+
+            // Calculate the differences from 100
+            var diff1 = Math.abs(num1 - 100);
+            var diff2 = Math.abs(num2 - 100);
+
+            // Determine which number is closer to 100 and display it using alert
+            if (diff1 < diff2) {
+                alert(num1 + " is closer to 100.");
+            } else if (diff2 < diff1) {
+                alert(num2 + " is closer to 100.");
+            } else {
+                alert("Both numbers are equally close to 100.");
+            }
+        }
+    </script>
+
+
+
+
+    <h2>Find Closest Value to 100</h2>
+
+    <button onclick="findClosestValue()">Find Closest</button>
+
+    <script>
+        function findClosestValue() {
+            // Prompt user for input
+            var num1 = parseInt(prompt("Enter the first number:"));
+            var num2 = parseInt(prompt("Enter the second number:"));
+
+            // Calculate the differences from 100
+            var diff1 = Math.abs(num1 - 100);
+            var diff2 = Math.abs(num2 - 100);
+
+            // Prepare the message to display in the alert
+            var message = "You entered:\n" +
+                          num1 + " and " + num2 + "\n" +
+                          "Difference from 100:\n" +
+                          diff1 + " and " + diff2 + "\n";
+
+            // Determine which number is closer to 100 and add to the message
+            if (diff1 < diff2) {
+                message += num1 + " is closer to 100.";
+            } else if (diff2 < diff1) {
+                message += num2 + " is closer to 100.";
+            } else {
+                message += "Both numbers are equally close to 100.";
+            }
+
+            // Show the alert with the complete message
+            alert(message);
+        }
+    </script>
+</body>
+</html>
